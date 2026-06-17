@@ -1,3 +1,9 @@
+# Leetcode Problem: 1768. Merge Strings Alternately
+# Difficulty: Easy
+# Approach: Two Pointers
+# Time Complexity: O(m+n) where m and n are the lengths of the two strings
+# Space Complexity: O(m+n) for the result string
+
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
         m = len(word1)
