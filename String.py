@@ -27,3 +27,18 @@ obj = Solution()
 print(obj.mergeAlternately("abc", "pqr"))
 print(obj.mergeAlternately("ab", "pqrs"))
 print(obj.mergeAlternately("abcd", "pq"))
+
+
+# Leetcode Problem: 1071. Greatest Common Divisor of Strings
+# Difficulty: Easy    Topic: String, Math
+# time complexity, space complexity: O(n + m) where n and m are the lengths of the two strings
+from math import gcd
+class Solution:
+    def gcdOfStrings(self, str1: str, str2: str) -> str:
+        # Check if they have non-zero GCD string.
+        if str1 + str2 != str2 + str1:
+            return ""
+
+        # Get the GCD of the two lengths.
+        max_length = gcd(len(str1), len(str2))
+        return str1[:max_length]        
