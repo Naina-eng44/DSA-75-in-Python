@@ -32,7 +32,9 @@ print(obj.mergeAlternately("abcd", "pq"))
 # Leetcode Problem: 1071. Greatest Common Divisor of Strings
 # Difficulty: Easy    Topic: String, Math
 # time complexity, space complexity: O(n + m) where n and m are the lengths of the two strings
+
 from math import gcd
+from typing import List
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
         # Check if they have non-zero GCD string.
@@ -42,3 +44,24 @@ class Solution:
         # Get the GCD of the two lengths.
         max_length = gcd(len(str1), len(str2))
         return str1[:max_length]        
+
+obj = Solution()
+print(obj.gcdOfStrings("ABCABC", "ABC"))    
+    
+    
+# Leetcode Problem: 1431. Kids With the Greatest Number of Candies
+# Difficulty: Easy    Topic: String, Math   
+# time complexity: O(n) where n is the number of kids, space complexity: O(n) for the result list
+
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        # Find the greatest number of candies among all the kids.
+        maxCandies = max(candies)
+        # For each kid, check if they will have greatest number of candies among all the kids.
+        result = []
+        for i in range(len(candies)):
+            result.append(candies[i] + extraCandies >= maxCandies)
+        return result
+
+obj = Solution()
+print(obj.kidsWithCandies([2,3,5,1,3], 3))
