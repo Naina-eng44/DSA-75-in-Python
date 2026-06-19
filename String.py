@@ -34,7 +34,6 @@ print(obj.mergeAlternately("abcd", "pq"))
 # time complexity, space complexity: O(n + m) where n and m are the lengths of the two strings
 
 from math import gcd
-from typing import List
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
         # Check if they have non-zero GCD string.
@@ -53,6 +52,7 @@ print(obj.gcdOfStrings("ABCABC", "ABC"))
 # Difficulty: Easy    Topic: String, Math   
 # time complexity: O(n) where n is the number of kids, space complexity: O(n) for the result list
 
+from typing import List
 class Solution:
     def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
         # Find the greatest number of candies among all the kids.
