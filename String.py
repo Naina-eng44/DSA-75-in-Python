@@ -65,3 +65,33 @@ class Solution:
 
 obj = Solution()
 print(obj.kidsWithCandies([2,3,5,1,3], 3))
+
+
+
+# Leetcode Problem: 345. Reverse Vowels of a String
+# Difficulty: Easy    Topic: String, Two Pointers   
+# time complexity: O(n) where n is the length of the string, space complexity: O(n) for the result string
+
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        vowels = set("aeiouAEIOU")
+        s = list(s)
+        left, right = 0, len(s) -1
+
+        while left < right:
+            while left < right and s[left] not in vowels:
+                left += 1
+
+            while left < right and s[right] not in vowels:
+                right -= 1
+
+            s[left], s[right] = s[right], s[left]
+
+            left += 1
+            right -= 1
+
+        return "".join(s)
+    
+obj = Solution()
+print(obj.reverseVowels("hello"))   
+print(obj.reverseVowels("leetcode"))
