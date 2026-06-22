@@ -95,3 +95,17 @@ class Solution:
 obj = Solution()
 print(obj.reverseVowels("hello"))   
 print(obj.reverseVowels("leetcode"))
+
+
+# Leetcode Problem: 151. Reverse Words in a String
+# Difficulty: Medium    Topic: String, Two Pointers
+# time complexity: O(n) where n is the length of the string, space complexity: O(n) for the result string
+
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        words = s.split()
+        words.reverse()
+        return " ".join(words)
+    
+obj = Solution()
+print(obj.reverseWords("the sky is blue"))
