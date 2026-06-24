@@ -26,3 +26,30 @@ class Solution:
 obj = Solution()    
 print(obj.canPlaceFlowers([1,0,0,0,1], 1))
 print(obj.canPlaceFlowers([1,0,0,0,1], 2))
+
+
+
+# Leetcode Problem: 238. Product of Array Except Self
+# Difficulty: Medium    Topic: Array, Prefix and Suffix Product
+# time complexity: O(n) where n is the length of the array, space complexity: O(1) since we are using the output array to store the result.
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        answer = [1] * n
+
+        # Prefix Product
+        prefix = 1
+        for i in range(n):
+            answer[i] = prefix
+            prefix *= nums[i]
+
+        # Suffix Product:
+        suffix = 1
+        for i in range(n - 1, -1, -1):
+            answer[i] *= suffix
+            suffix *= nums[i]
+
+        return answer
+    
+obj = Solution()
+print(obj.productExceptSelf([1,2,3,4]))
