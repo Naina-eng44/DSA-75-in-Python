@@ -53,3 +53,25 @@ class Solution:
     
 obj = Solution()
 print(obj.productExceptSelf([1,2,3,4]))
+
+
+# Leetcode Problem: 334. Increasing Triplet Subsequence
+# Difficulty: Medium    Topic: Array, Greedy    
+# Time complexity: O(n) where n is the length of the array, space complexity: O(1) since we are using two variables to keep track of the first and second elements of the triplet.
+class Solution:
+    def increasingTriplet(self, nums: List[int]) -> bool:
+        first = float('inf')
+        second = float('inf')
+
+        for num in nums:
+            if num <= first:
+                first = num
+            elif num <= second:
+                second = num
+            else:
+                return True
+        
+        return False
+    
+obj = Solution()
+print(obj.increasingTriplet([1,2,3,4,5]))   
