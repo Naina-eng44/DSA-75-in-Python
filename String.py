@@ -109,3 +109,36 @@ class Solution:
     
 obj = Solution()
 print(obj.reverseWords("the sky is blue"))
+
+
+
+# Leetcode Problem: 443. String Compression
+# Difficulty: Medium    Topic: String, Two Pointers
+# time complexity: O(n) where n is the length of the string, space complexity: O(1) since we are modifying the input array in place.
+class Solution:
+    def compress(self, chars: List[str]) -> int:
+        i = 0
+        index = 0
+
+        while i< len(chars):
+            current = chars[i]
+            count = 0
+
+            while i < len(chars) and chars[i] == current:
+                count += 1
+                i += 1
+
+            chars[index] = current
+            index += 1
+
+            if count > 1:
+                for digit in str(count):
+                    chars[index] = digit
+                    index += 1
+
+        return index
+    
+obj = Solution()
+chars = ["a","a","b","b","c","c","c"]
+print(obj.compress(chars))
+print(chars[:obj.compress(chars)])
